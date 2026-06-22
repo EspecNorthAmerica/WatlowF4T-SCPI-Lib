@@ -2,7 +2,7 @@
 
 A Python 3 built-in library using the Standard Commands Programming Instrumentation (SCPI) was implemented to communicate, control and operate Watlow F4T for this application.
 
-Communication protocol for this applications is available only via TCP/IP using port 5025 implemented by Watlow. The sample program included in this implementation provides a starting point. Users interested in a full SCPI implementation can expand 
+Communication protocol for this applications is available only via TCP/IP using port 5025 implemented by Watlow. The sample program included in this implementation provides a starting point. Users interested in a full SCPI implementation can expand the implementation using the F4T SCPI in the spreadsheet found under the ```f4t_scpi_commands``` directory. It is the spreadsheet prepared and distirubted by Watlow.  
 
 ## Disclaimer
 
@@ -22,7 +22,7 @@ software.
 
 ## F4T Software Version 
 
-The SCPI protocol for Watlow F4T is application with new firmware on F4T unit. According to Watlow F4T software (tested on 04:07:0012). It also only applies in TCP/IP protocol application, using port 5025. IT does not support serial itnerface.  
+The SCPI protocol for Watlow F4T is application with new firmware on F4T unit. According to Watlow, F4T Firmware revision 03:06:0011, released May 5, 2017 and higher is required.
 
 ## Python 3 version 
 
@@ -59,29 +59,17 @@ There are two ways to use this distribution:
 1. PyPI
 2. src folder
 
-<<<<<<< HEAD
-- apt update
-- apt install python3-pip
-- python3 -m pip install --upgrade pip
-=======
 However, neither the PyPI package nor the src distribution folder has been published.
->>>>>>> f4tscpi-dev26
 
 Until a packaged release is available, the easiest way to use this free library is to clone the repository to your local system and check out the main branch.
 
 ## Cloning the F4TSCPI repo
 
-<<<<<<< HEAD
-- yum update
-- yum install python3 python3-pip
-- python3 -m pip install --upgrade pip
-=======
 Clone this free library to your local system as follows:
 
 ```git clone git@github.com:EspecNorthAmerica/WatlowF4T-SCPI-Lib.git```
 
 ```git checkout main```
->>>>>>> f4tscpi-dev26
 
 ## Testing
 
@@ -99,7 +87,7 @@ To run the program to control and operate your Watlow F4T, issue:
 
 ## Implementation 
 
-For required application not implemented in the sample run program may be added by referencing the SCPI commands in the spread fould in the folder: f4t+scpi_cmds 
+For required application not implemented in the sample run program or in the Watlow SCPI spreadsheet, a better approach would be to take advantage of the free library offered from the ESPEC Chamber Connect Library, available here: [ChamberConnectLibrary](https://github.com/EspecNorthAmerica/ChamberConnectLibrary/tree/glclib-py3).
 
 # Update Notes 
 

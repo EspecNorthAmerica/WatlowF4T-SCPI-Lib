@@ -1,44 +1,87 @@
-# WatlowF4TscpiLibrary
+# WatlowF4T SCPI Library
 
 A Python 3 built-in library using the Standard Commands Programming Instrumentation (SCPI) was implemented to communicate, control and operate Watlow F4T for this application.
 
-Communication protocol can support TCP/IP. The sample program included in this implementation makes use of TCP/IP configuration. 
+Communication protocol for this applications is available only via TCP/IP using port 5025 implemented by Watlow. The sample program included in this implementation provides a starting point. Users interested in a full SCPI implementation can expand 
 
-## Requirements
+## Disclaimer
 
-This library makes use of the built-in Python Library. It requires importing atexit and register/unregister. 
+Copyright (c) 2026 ESPEC North America, Inc.
 
-Thus, only following are needed: 
+This library is provided free of charge for communicating with Watlow F4T
+controllers using SCPI over TCP/IP. It is provided "as is", without warranty of
+any kind, express or implied.
+
+Users are responsible for testing and validating this software in their own
+environment before using it with any equipment or process. The authors and
+contributors are not liable for damages, losses, equipment issues, process
+interruptions, or other consequences resulting from the use or misuse of this
+software.
+
+# Requirements
+
+## F4T Software Version 
+
+The SCPI protocol for Watlow F4T is application with new firmware on F4T unit. According to Watlow F4T software (tested on 04:07:0012). It also only applies in TCP/IP protocol application, using port 5025. IT does not support serial itnerface.  
+
+## Python 3 version 
+
+This library makes use of the built-in Python Library. It requires importing the register/unregister. 
+
+Thus, only the standard install of Python 3 is required. This library has been tested on the following Python 3 versions: 
  
- - Python 3.7.3+
- - Python3-pip
+ - Python 3.6
+ - Python 3.8
+ - Python 3.9
+ - Python 3.13 
 
-The SCPI protocol for Watlow F4T is application with new firmware (tested on 04:07:0012). It also only applies in TCP/IP protocol application, using port 5025. IT does not support serial itnerface.  
+Since the above versions (up to 3.9) already reached their end of life (EOL), current versions of Python 3 are recommended. 
 
-## Installation
+# Installation
 
-This implementation was originally written for GNU/Linux, but it can support Mac OS and MS Windows platform, provided the necessary requirements and packages are met.
+This implementation was originally written for GNU/Linux, but it can be used Mac OS and MS Windows platform, provided the necessary requirements and packages of Python 3 are met. To install Python 3 on MS Windows, simply navigate to the [www.python.org](http://www.python.org), download the package for Windows. 
 
-The following provides guidance for preparing Debian 11 GNU/Linux and CentOS 7 platforms to use this implementation.
+### Python 3 on GNU/Linux
 
-### Debian 11 GNU/Linux
+The complete install of Debian and AlmaLinux, or Ubuntu GNU/Linux should include Python 3 standard install that includes the SCPI library. If Python 3 is not already installed, the following commands can be issued in the respective GNU/Linux platform: 
 
-Debian 11 basic install readily contains the Python 3 distribution. However, the pyserial package needs to be installed if an RS-233/485 method is to be used for the application.
+* Debian/Ubuntu: ```sudo apt install python3```
+* AlmaLinux: ```sudo dnf install python3``` 
 
-Commands should be issued as sudo (or under root shell):
+Note: On AlmaLinux or Debian GNU/Linux platform, the sudo command refers to issuing the above command as root. 
 
+# How to Use this F4T SCPI library
+
+## Installing & Configuring F4TSCPI library
+
+There are two ways to use this distribution:
+
+1. PyPI
+2. src folder
+
+<<<<<<< HEAD
 - apt update
 - apt install python3-pip
 - python3 -m pip install --upgrade pip
+=======
+However, neither the PyPI package nor the src distribution folder has been published.
+>>>>>>> f4tscpi-dev26
 
-### CentOS 7 GNU/Linux
+Until a packaged release is available, the easiest way to use this free library is to clone the repository to your local system and check out the main branch.
 
-CentOS 7 basic install has Python 2.7. Thus, Python 3 must be install manually.
-To accomplish this, CentOS 7 must be modified to link to the CentOS repository and RMPFusion. 
+## Cloning the F4TSCPI repo
 
+<<<<<<< HEAD
 - yum update
 - yum install python3 python3-pip
 - python3 -m pip install --upgrade pip
+=======
+Clone this free library to your local system as follows:
+
+```git clone git@github.com:EspecNorthAmerica/WatlowF4T-SCPI-Lib.git```
+
+```git checkout main```
+>>>>>>> f4tscpi-dev26
 
 ## Testing
 
@@ -49,15 +92,30 @@ This implementation has been tested on various Watlow F4T with different configu
 - Temp with single state refrig
 - Temp and Humi with cascade refrig
 
-Tested on Debian 9 with custom install of Python 3.7.3; CentOS 7 on Python 3.6.8 Debian 10/11 (on default Python 3 install) platform via the TCP/IP protocol.
-Tested with Python:
+To run the program to control and operate your Watlow F4T, issue: 
 
-- Python 3.6.8
-- Python 3.7.3
-- Python 3.9.1
-
-Thus, this implementation will work on all Python 3.6+  
+* MS Windows: ```python f4t_run.py```
+* GNU/Linux: ```sudo python3 f4t_run.py``` 
 
 ## Implementation 
 
-For required application not implemented in the sample run program 'f4t_run.py', various methods can be implemented to call the interface modules in action.  
+For required application not implemented in the sample run program may be added by referencing the SCPI commands in the spread fould in the folder: f4t+scpi_cmds 
+
+# Update Notes 
+
+Version 0.2.0
+
+date: June 2026 
+
+This update does not change the core SCPI communication functions. The library has been reviewed and tested with newer versions of Python 3 to confirm compatibility with current Python environments.
+
+Tested Python versions:
+
+* Python 3.9
+* Python 3.13
+
+Notes:
+
+* Existing example programs continue to use TCP/IP port 5025 for Watlow F4T SCPI communication.
+* No changes were made to the public class names or method names.
+* Users are encouraged to test the library in their own environment before using it with equipment or production processes.

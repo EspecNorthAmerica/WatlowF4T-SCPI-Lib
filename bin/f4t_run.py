@@ -1,18 +1,43 @@
+<<<<<<< HEAD
 #!python
+=======
+#!/bin/python3
+>>>>>>> f4tscpi-dev26
 '''
 :author: Paul Nong-Laolam <pnong-laolam@espec.com>
 :license: MIT, see LICENSE for more detail.
 :copyright: (c) 2022. ESPEC North America, INC.
+<<<<<<< HEAD
 :file: f4t_run.py 
+=======
+:file: f4t_run.py
+>>>>>>> f4tscpi-dev26
 
 Application interface for controlling Watlow F4T operations. 
 This program may be and can be reimplemented with additional
 call methods to utilize the Watlow F4T control interface
 from its class and method definitions. 
 
+<<<<<<< HEAD
 TCP/IP protocol is applied. 
 '''
 import os, sys, re
+=======
+Watlow F4T SCPI Library
+
+Copyright (c) 2026 ESPEC North America, Inc.
+
+This software is provided as a free library for communicating with Watlow F4T
+controllers using SCPI over TCP/IP. It is provided "as is", without warranty of
+any kind, express or implied.
+
+Users are responsible for verifying proper operation in their own environment.
+The authors and contributors are not liable for any damages, losses, equipment
+issues, process interruptions, or other consequences resulting from the use or
+misuse of this software.
+'''
+import os, sys, re, socket 
+>>>>>>> f4tscpi-dev26
 sys.path.insert(0,'../f4tscpi')
 import time
 import logging
@@ -27,8 +52,13 @@ def ip_addr():
     '''
     while True:
         try:
+<<<<<<< HEAD
             ip_addr = input('Enter F4T IP address (e.g., 192.168.0.101): ')
             #ip_addr = '10.30.100.50'
+=======
+            #ip_addr = '10.30.100.161'
+            ip_addr = input('Enter F4T IP address (e.g., 192.168.0.101): ')
+>>>>>>> f4tscpi-dev26
             chk_ip = re.match(r"^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$", ip_addr)
             if chk_ip:
                 print ('\n')
@@ -216,6 +246,7 @@ def thCtrl():
     '''
        set options for Temp and Humi controls
     '''
+<<<<<<< HEAD
     while(True):
         print_menu('2')
         option = ''
@@ -236,6 +267,23 @@ def thCtrl():
             main_menu()
         else:
             print('Invalid option; expected a letter [a-z].')
+=======
+    def thOption(option):
+        '''get T/H option
+        '''
+        return {
+            't': lambda: setTemp('Temp',1),
+            'h': lambda: setTemp('Humi',2),
+            'l': lambda: listTempPV(1),
+            'z': lambda: main_menu(),
+        }.get(option, lambda: print ('Not a valid option; expecting [t, h, l, z]') )()
+
+    while(True):
+        print_menu('2')
+        option = ''
+        option = input('Select option (a-z): ')
+        thOption(option) 
+>>>>>>> f4tscpi-dev26
 
 def unit():
     '''read device unit
@@ -268,11 +316,16 @@ def deviceID():
     print ('Probing target device...')
     time.sleep(0.5)
     print (f'Manufacturer, Part Number, S/N, Software Version:\n{tst.get_id()}')
+<<<<<<< HEAD
+=======
+    pass
+>>>>>>> f4tscpi-dev26
 
 def main_menu(): 
     '''
        Set options for program control
     '''
+<<<<<<< HEAD
     while(True):
         print_menu('1')
         option = ''
@@ -297,10 +350,29 @@ def main_menu():
             exit()
         else:
             print('Invalid option; expected a letter [a-z].')
+=======
+    def getOption(option):
+        return {
+            'i': lambda: deviceID(),
+            't': lambda: thCtrl(),
+            'p': lambda: progMenu(),
+            'e': lambda: eventCtrl(),
+            'r': lambda: rampMenu(),
+            'u': lambda: unit(),
+            'z': lambda: exit(),
+        }.get(option, lambda: print ('Not a valid option; expecting [i, t, p, ...]') )() 
+
+    while(True):
+        print_menu('1')
+        option = ''
+        option = input('Select option (i, t, p, ...): ')
+        getOption(option)
+>>>>>>> f4tscpi-dev26
 
 def eventCtrl():
     '''Test TS events
     '''
+<<<<<<< HEAD
     while(True):
         print_menu('4')
         option = ''
@@ -321,6 +393,23 @@ def eventCtrl():
             main_menu() 
         else:
             print('Invalid option; expected a letter [a-z].')
+=======
+    def eventOption(option):
+        '''get event option menu
+        '''
+        return {
+            'r': lambda: readTS(),
+            's': lambda: setTS(),
+            'n': lambda: tsName(),
+            'z': lambda: main_menu(), 
+        }.get(option, lambda: print('Not a valid option') )()
+
+    while(True):
+        print_menu('4')
+        option = ''
+        option = input('Select option (a-z): ')
+        eventOption(option)
+>>>>>>> f4tscpi-dev26
 
 def rampMenu():
     '''define ramp mode and control
@@ -341,9 +430,21 @@ def rampMenu():
             option = input('Select option ("rr", "sr", ...): ')
         except:
             print('Invalid input.')
+<<<<<<< HEAD
         if option == 'rr':
             try:
                 loop = int(input('Enter loop number (1=Temp, 2=Humi; loop_max=4): '))
+=======
+
+        def loop():
+            '''set loop input'''
+            loop = int(input('Enter loop number (1=Temp, 2=Humi; loop_max=4): '))
+            return loop
+
+        if option == 'rr':
+            try:
+                loop = loop()
+>>>>>>> f4tscpi-dev26
                 if isinstance(loop, int):
                     if loop in chk_range:
                         tst.get_ramp('rate',loop)
@@ -353,7 +454,11 @@ def rampMenu():
                 print ('Invalid loop number.')  
         elif option == 'sr':
             try:
+<<<<<<< HEAD
                 loop = int(input('Enter loop number (1=Temp, 2=Humi; loop_max=4): '))
+=======
+                loop = loop()
+>>>>>>> f4tscpi-dev26
                 if isinstance(loop, int):
                     if loop in chk_range:
                         setRV(loop)
@@ -363,7 +468,11 @@ def rampMenu():
                 print ('Invalid loop number.') 
         elif option == 'rt':
             try:
+<<<<<<< HEAD
                 loop = int(input('Enter loop number (1=Temp, 2=Humi; loop_max=4): '))
+=======
+                loop = loop()
+>>>>>>> f4tscpi-dev26
                 if isinstance(loop, int):
                     if loop in chk_range:
                         tst.get_ramp('time',loop)
@@ -373,7 +482,11 @@ def rampMenu():
                 print ('Invalid loop number.')
         elif option == 'st':
             try:
+<<<<<<< HEAD
                 loop = int(input('Enter loop number (1=Temp, 2=Humi; loop_max=4): '))
+=======
+                loop = loop()
+>>>>>>> f4tscpi-dev26
                 if isinstance(loop, int):
                     if loop in chk_range:
                         setRT(loop)
@@ -387,7 +500,11 @@ def rampMenu():
             instantChange('OFF',1)
         elif option == 'sc':
             try:
+<<<<<<< HEAD
                 loop = int(input('Enter loop number (1=Temp, 2=Humi; loop_max=4): '))
+=======
+                loop = loop()
+>>>>>>> f4tscpi-dev26
                 if isinstance(loop, int):
                     if loop in chk_range:
                         setScale(loop)
@@ -414,6 +531,7 @@ def progMenu():  # test
        s: stop program
        z: return to Main Menu 
     '''
+<<<<<<< HEAD
     while(True):
         print_menu('3')
         option = ''
@@ -438,6 +556,25 @@ def progMenu():  # test
             main_menu()
         else:
             print('Invalid option; expected a letter [a-z].')
+=======
+    def prgOption(option):
+        '''get program option from menu
+        '''
+        return {
+            'l': lambda: listProg(),
+            'e': lambda: runProg(),
+            'p': lambda: progMode('PAUSE'),
+            'r': lambda: progMode('RESUME'),
+            's': lambda: progMode('STOP'),
+            'z': lambda: main_menu(),
+        }.get(option, lambda: print('Not a valid option') )()
+
+    while(True):
+        print_menu('3')
+        option = ''
+        option = input('Select option (a-z): ')
+        prgOption(option)
+>>>>>>> f4tscpi-dev26
 
 def menu(choice):
     '''menu list
@@ -506,6 +643,7 @@ def menu(choice):
         'z': 'Return to Main Menu           '
     }
 
+<<<<<<< HEAD
     if choice == '1':
         return main_menu
     elif choice == '2':
@@ -518,6 +656,16 @@ def menu(choice):
         return ramp_menu 
     elif choice == '6':
         return unit_menu
+=======
+    return {
+        '1': lambda: main_menu,
+        '2': lambda: th_menu,
+        '3': lambda: prog_menu,
+        '4': lambda: ts_menu,
+        '5': lambda: ramp_menu,
+        '6': lambda: unit_menu,
+    }.get(choice, lambda: print('Not a valid option') )()
+>>>>>>> f4tscpi-dev26
 
 def print_menu(choice):
     '''set up selection menu

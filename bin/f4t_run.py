@@ -10,7 +10,18 @@ This program may be and can be reimplemented with additional
 call methods to utilize the Watlow F4T control interface
 from its class and method definitions. 
 
-TCP/IP protocol is applied. 
+Watlow F4T SCPI Library
+
+Copyright (c) 2026 ESPEC North America, Inc.
+
+This software is provided as a free library for communicating with Watlow F4T
+controllers using SCPI over TCP/IP. It is provided "as is", without warranty of
+any kind, express or implied.
+
+Users are responsible for verifying proper operation in their own environment.
+The authors and contributors are not liable for any damages, losses, equipment
+issues, process interruptions, or other consequences resulting from the use or
+misuse of this software.
 '''
 import os, sys, re, socket 
 sys.path.insert(0,'../f4tscpi')

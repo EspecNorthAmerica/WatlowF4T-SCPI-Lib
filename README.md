@@ -1,4 +1,4 @@
-# WatlowF4TscpiLibrary
+# WatlowF4T SCPI Library
 
 A Python 3 built-in library using the Standard Commands Programming Instrumentation (SCPI) was implemented to communicate, control and operate Watlow F4T for this application.
 
@@ -21,48 +21,41 @@ Thus, only the standard install of Python 3 is required. This library has been t
  - Python 3.9
  - Python 3.13 
 
-Since the above versions (up to 3.9) are predicated, current versions of Python 3 are recommended. 
+Since the above versions (up to 3.9) already reached their end of life (EOL), current versions of Python 3 are recommended. 
 
-## Installation
+# Installation
 
-This implementation was originally written for GNU/Linux, but it can support Mac OS and MS Windows platform, provided the necessary requirements and packages are met.
+This implementation was originally written for GNU/Linux, but it can be used Mac OS and MS Windows platform, provided the necessary requirements and packages of Python 3 are met. To install Python 3 on MS Windows, simply navigate to the [Python](http://www.python.org), download the package for Windows. 
 
-The following provides guidance for preparing Debian 11 GNU/Linux and CentOS 7 platforms to use this implementation.
+### Python 3 on GNU/Linux
 
-### Debian 11 GNU/Linux
+The complete install of Debian and AlmaLinux, or Ubuntu GNU/Linux should include Python 3 standard install that includes the SCPI library. If Python 3 is not already installed, the following commands can be issued in the respective GNU/Linux platform: 
 
-Debian 11 basic install readily contains the Python 3 distribution. However, the pyserial package needs to be installed if an RS-233/485 method is to be used for the application.
+* Debian/Ubuntu: ```sudo apt install python3```
+* AlmaLinux: ```sudo dnf install python3``` 
 
-Commands should be issued as sudo (or under root shell):
+Note: On AlmaLinux or Debian GNU/Linux platform, the sudo command refers to issuing the above command as root. 
 
-- apt update
-- apt install python3-pip
-- pip3 install --upgrade pip
+# How to Use this F4T SCPI library
 
-### CentOS 7 GNU/Linux
+## Installing & Configuring F4TSCPI library
 
-CentOS 7 basic install has Python 2.7. Thus, Python 3 must be install manually.
-To accomplish this, CentOS 7 must be modified to link to the CentOS repository and RMPFusion.
-Python 3.6.8 is the default package for this distribution.  
+There are two ways to use this distribution:
 
-- yum update
-- yum install python3 python3-pip
-- pip3 install --upgrade pip
+1. PyPI
+2. src folder
 
-### Installing F4TSCPI library
+However, neither the PyPI package nor the src distribution folder has been published.
 
-Run the follow script to install the package: 
+Until a packaged release is available, the easiest way to use this free library is to clone the repository to your local system and check out the main branch.
 
-```pip install f4tscpi```
+## Cloning the F4TSCPI repo
 
-## Test the Program
+Clone this free library to your local system as follows:
 
-After executing ``pip install <package>``, change directory to: ./bin to execute the program: 
+```git clone git@github.com:EspecNorthAmerica/WatlowF4T-SCPI-Lib.git```
 
-``sudo python3 f4t_run.py```
-
-The program must be executed by user with root or sudo privilege. 
-
+```git checkout main```
 
 ## Testing
 
@@ -73,14 +66,10 @@ This implementation has been tested on various Watlow F4T with different configu
 - Temp with single state refrig
 - Temp and Humi with cascade refrig
 
-Tested on Debian 9 with custom install of Python 3.7.3; CentOS 7 on Python 3.6.8 Debian 10/11 (on default Python 3 install) platform via the TCP/IP protocol.
-Tested with Python:
+To run the program to control and operate your Watlow F4T, issue: 
 
-- Python 3.6.8
-- Python 3.7.3
-- Python 3.9.1
-
-Thus, this implementation will work on all Python 3.6+  
+* MS Windows: ```python f4t_run.py```
+* GNU/Linux: ```sudo python3 f4t_run.py``` 
 
 ## Implementation 
 

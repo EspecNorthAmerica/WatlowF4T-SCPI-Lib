@@ -6,6 +6,19 @@
 
 Upper level interface for Watlow F4T controller; control implementation 
 for communication via SCPI register, unregister using built-in Python Library.
+
+Watlow F4T SCPI Library
+
+Copyright (c) 2026 ESPEC North America, Inc.
+
+This software is provided as a free library for communicating with Watlow F4T
+controllers using SCPI over TCP/IP. It is provided "as is", without warranty of
+any kind, express or implied.
+
+Users are responsible for verifying proper operation in their own environment.
+The authors and contributors are not liable for any damages, losses, equipment
+issues, process interruptions, or other consequences resulting from the use or
+misuse of this software.
 '''
 import time
 import logging

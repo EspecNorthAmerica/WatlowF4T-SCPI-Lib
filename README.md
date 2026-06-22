@@ -89,6 +89,8 @@ To run the program to control and operate your Watlow F4T, issue:
 
 For required application not implemented in the sample run program or in the Watlow SCPI spreadsheet, a better approach would be to take advantage of the free library offered from the ESPEC Chamber Connect Library, available here: [ChamberConnectLibrary](https://github.com/EspecNorthAmerica/ChamberConnectLibrary/tree/glclib-py3).
 
+If the user prefers a quick remote communication and control of the F4T, they can check out this link for a quick and easy remote access and control of the F4T via PuTTY and SCPI commands: [F4T SCPI Commands via PuTTY Terminal Emulator](https://github.com/EspecNorthAmerica/ESPECWebController/wiki/PuTTY-TCP-User-Guide) 
+
 # Update Notes 
 
 Version 0.2.0

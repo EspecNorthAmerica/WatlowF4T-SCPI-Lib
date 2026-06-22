@@ -12,8 +12,7 @@ from its class and method definitions.
 
 TCP/IP protocol is applied. 
 '''
-import os, sys, re, socket 
-sys.path.insert(0,'../f4tscpi')
+import os, sys, re
 import time
 import logging
 

@@ -2,18 +2,26 @@
 
 A Python 3 built-in library using the Standard Commands Programming Instrumentation (SCPI) was implemented to communicate, control and operate Watlow F4T for this application.
 
-Communication protocol can support TCP/IP. The sample program included in this implementation makes use of TCP/IP configuration. 
+Communication protocol for this applications is available only via TCP/IP using port 5025 implemented by Watlow. The sample program included in this implementation provides a starting point. Users interested in a full SCPI implementation can expand 
 
-## Requirements
+# Requirements
 
-This library makes use of the built-in Python Library. It requires importing atexit and register/unregister. 
+## F4T Software Version 
 
-Thus, only following are needed: 
+The SCPI protocol for Watlow F4T is application with new firmware on F4T unit. According to Watlow F4T software (tested on 04:07:0012). It also only applies in TCP/IP protocol application, using port 5025. IT does not support serial itnerface.  
+
+## Python 3 version 
+
+This library makes use of the built-in Python Library. It requires importing the register/unregister. 
+
+Thus, only the standard install of Python 3 is required. This library has been tested on the following Python 3 versions: 
  
- - Python 3.6+
- - Python3-pip
+ - Python 3.6
+ - Python 3.8
+ - Python 3.9
+ - Python 3.13 
 
-The SCPI protocol for Watlow F4T is application with new firmware (tested on 04:07:0012). It also only applies in TCP/IP protocol application, using port 5025. IT does not support serial itnerface.  
+Since the above versions (up to 3.9) are predicated, current versions of Python 3 are recommended. 
 
 ## Installation
 

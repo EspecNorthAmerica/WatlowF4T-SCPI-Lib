@@ -4,6 +4,20 @@ A Python 3 built-in library using the Standard Commands Programming Instrumentat
 
 Communication protocol for this applications is available only via TCP/IP using port 5025 implemented by Watlow. The sample program included in this implementation provides a starting point. Users interested in a full SCPI implementation can expand 
 
+## Disclaimer
+
+Copyright (c) 2026 ESPEC North America, Inc.
+
+This library is provided free of charge for communicating with Watlow F4T
+controllers using SCPI over TCP/IP. It is provided "as is", without warranty of
+any kind, express or implied.
+
+Users are responsible for testing and validating this software in their own
+environment before using it with any equipment or process. The authors and
+contributors are not liable for damages, losses, equipment issues, process
+interruptions, or other consequences resulting from the use or misuse of this
+software.
+
 # Requirements
 
 ## F4T Software Version 
@@ -25,7 +39,7 @@ Since the above versions (up to 3.9) already reached their end of life (EOL), cu
 
 # Installation
 
-This implementation was originally written for GNU/Linux, but it can be used Mac OS and MS Windows platform, provided the necessary requirements and packages of Python 3 are met. To install Python 3 on MS Windows, simply navigate to the [Python](http://www.python.org), download the package for Windows. 
+This implementation was originally written for GNU/Linux, but it can be used Mac OS and MS Windows platform, provided the necessary requirements and packages of Python 3 are met. To install Python 3 on MS Windows, simply navigate to the [www.python.org](http://www.python.org), download the package for Windows. 
 
 ### Python 3 on GNU/Linux
 

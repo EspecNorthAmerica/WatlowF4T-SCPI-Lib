@@ -3,7 +3,7 @@
 :author: Paul Nong-Laolam <pnong-laolam@espec.com>
 :license: MIT, see LICENSE for more detail.
 :copyright: (c) 2022. ESPEC North America, INC.
-:file: f4t_run.py 
+:file: f4t_run.py
 
 Application interface for controlling Watlow F4T operations. 
 This program may be and can be reimplemented with additional

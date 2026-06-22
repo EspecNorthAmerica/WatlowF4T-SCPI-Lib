@@ -88,3 +88,22 @@ To run the program to control and operate your Watlow F4T, issue:
 ## Implementation 
 
 For required application not implemented in the sample run program may be added by referencing the SCPI commands in the spread fould in the folder: f4t+scpi_cmds 
+
+# Update Notes 
+
+Version 0.2.0
+
+date: June 2026 
+
+This update does not change the core SCPI communication functions. The library has been reviewed and tested with newer versions of Python 3 to confirm compatibility with current Python environments.
+
+Tested Python versions:
+
+* Python 3.9
+* Python 3.13
+
+Notes:
+
+* Existing example programs continue to use TCP/IP port 5025 for Watlow F4T SCPI communication.
+* No changes were made to the public class names or method names.
+* Users are encouraged to test the library in their own environment before using it with equipment or production processes.
